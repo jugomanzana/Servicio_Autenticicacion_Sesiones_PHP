@@ -2,10 +2,11 @@
 session_start();
 
 $usuarios = [
-    "admin" => "1234",
-    "usuario" => "abcd",
+    "admin" => "admin",
+    "usuario" => "usuario",    
+    "Hugo" => "Hugo",
     "Paco" => "Paco",
-    "Juanfran" => "Juanfran",
+    "JuanFran" => "JuanFran",
     "Carlos" => "Carlos"
 ];
 
@@ -14,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST["nombre"];
     $contraseña = $_POST["password"]; 
 
-    // Aquí se valida la existencia de la clave y si la contraseña coincide
+    // Valida la existencia de la clave y si la contraseña coincide
     if (isset($usuarios[$nombre]) && $usuarios[$nombre] === $contraseña) {
         $_SESSION["usuario"] = $nombre;
         header("Location: bienvenida.php");
@@ -43,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container d-flex justify-content-center">
         <div class="login-card card shadow p-4">
             <div class="text-center mb-4">
-                <img src="betii.png" alt="Logo de la aplicación" class="img-fluid mb-3" style="max-height: 100px;">
+                <img src="onepiece.png" alt="Logo" class="img-fluid mb-3" style="max-height: 100px;">
                 <h3 class="mb-0">Servicio de Autenticación</h3>
             </div>
             
